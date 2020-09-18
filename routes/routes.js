@@ -11,7 +11,7 @@ module.exports = app => {
     app
       .set("myDb")
       .collection("filmsCollection")
-      .find({})
+      .find({filmPrice: {$gt: 5}})
       .toArray(function(err, docs) {
         if (err) {
           console.error(err);
